@@ -68,7 +68,7 @@ $(filter $(OBJ_DIR)/$(TEST_DIR)/%.o, $(OBJ)): $(OBJ_DIR)/%.o : %.cpp
 
 # Clean Build
 clean:
-	@rm -r $(OBJ) $(BUILD_DIR)/$(TARGET)
+	@-rm $(OBJ) $(BUILD_DIR)/$(TARGET)
 	
 # Run Target Executable
 run: $(BUILD_DIR)/$(TARGET)
