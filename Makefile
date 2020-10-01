@@ -4,16 +4,16 @@
 # Target Name
 TARGET = program
 
-# Build Path
-BUILD_DIR = bin
-# Object Directory
-OBJ_DIR = obj
 # Source Directory
 SRC_DIR = src
 # Include Directory
 INC_DIR = inc
 # Test Directory
 TEST_DIR = test
+# Object Directory
+OBJ_DIR = obj
+# Build Path
+BUILD_DIR = bin/$(SRC_DIR)
 
 # Source Files
 SRC := $(wildcard $(SRC_DIR)/*.cpp)

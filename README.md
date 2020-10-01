@@ -4,6 +4,7 @@ All-purpose C++ Makefile
 ### Directory Structure
     .
     ├── bin
+    │   ├── src
     │   └── test
     ├── inc
     ├── Makefile
