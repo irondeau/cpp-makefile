@@ -16,8 +16,9 @@ INC_DIR = inc
 TEST_DIR = test
 
 # Source Files
-SRC := $(shell find $(SRC_DIR) -name *.cpp)
-INC := $(shell find $(INC_DIR) -name *.h -or -name *.hpp)
+SRC := $(wildcard $(SRC_DIR)/*.cpp)
+INC := $(wildcard $(INC_DIR)/*.h)
+INC += $(wildcard $(INC_DIR)/*.hpp)
 OBJ := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/$(SRC_DIR)/%.o, $(SRC))
 
 ###   TESTING SOURCES   ###
