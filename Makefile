@@ -34,7 +34,7 @@ SRC = src/main.cpp test/test_name.cpp
 endif
 
 # Postcondition statements
-BUILD_DIR = bin/test
+BUILD_DIR = bin/$(TEST_DIR)
 OBJ := $(patsubst $(SRC_DIR)/%.cpp, $(OBJ_DIR)/$(SRC_DIR)/%.o, $(SRC))
 OBJ := $(patsubst $(TEST_DIR)/%.cpp, $(OBJ_DIR)/$(TEST_DIR)/%.o, $(OBJ))
 
@@ -58,12 +58,12 @@ $(BUILD_DIR)/$(TARGET): $(OBJ)
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $@
 
 # Build Source Object Files
-$(filter $(OBJ_DIR)/$(SRC_DIR)/%.o, $(OBJ)): $(OBJ_DIR)/%.o : %.cpp
+$(OBJ_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	@echo "Building dependency" $@ "from" $<
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Build Test Object Files
-$(filter $(OBJ_DIR)/$(TEST_DIR)/%.o, $(OBJ)): $(OBJ_DIR)/%.o : %.cpp
+$(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.c
 	@echo "Building dependency" $@ "from" $<
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
