@@ -58,12 +58,12 @@ $(BUILD_DIR)/$(TARGET): $(OBJ)
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $@
 
 # Build Source Object Files
-$(OBJ_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+$(OBJ_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@echo "Building dependency" $@ "from" $<
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Build Test Object Files
-$(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.c
+$(OBJ_DIR)/$(TEST_DIR)/%.o: $(TEST_DIR)/%.cpp
 	@echo "Building dependency" $@ "from" $<
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
